@@ -1,13 +1,12 @@
 import React from 'react'
-import { Github, Twitter, Linkedin, Mail } from 'lucide-react'
+import { Github, Mail, Tv } from 'lucide-react'
 import './SocialLinks.scss'
 
 const SocialLinks: React.FC = () => {
   const links = [
-    { icon: <Github size={24} />, url: 'https://github.com', label: 'Github' },
-    { icon: <Twitter size={24} />, url: 'https://twitter.com', label: 'Twitter' },
-    { icon: <Linkedin size={24} />, url: 'https://linkedin.com', label: 'Linkedin' },
-    { icon: <Mail size={24} />, url: 'mailto:contact@danoday.com', label: 'Mail' },
+    { icon: <Github size={24} />, url: 'https://github.com/DanoAndHolidays', label: 'Github' },
+    { icon: <Tv size={24} />, url: 'https://space.bilibili.com/111616585', label: 'Bilibili' },
+    { icon: <Mail size={24} />, url: 'mailto:Danoday@Foxmail.com', label: 'Mail' },
   ]
 
   return (
