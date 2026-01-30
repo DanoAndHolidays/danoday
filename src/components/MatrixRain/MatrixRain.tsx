@@ -29,7 +29,8 @@ const MatrixRain: React.FC = () => {
     }
 
     const draw = () => {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'
+      // 这里的 alpha 值决定了拖尾的长度
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
       ctx.font = `${fontSize}px monospace`
@@ -40,9 +41,9 @@ const MatrixRain: React.FC = () => {
         // 获取垂直位置
         const yPos = drops[i] * fontSize
 
-        // 计算边缘淡出效果 (顶部和底部)
+        // 减少边缘淡出，确保中间区域有足够密度的粒子
         let opacity = 1.0
-        const margin = 150 // 边缘淡出区域大小
+        const margin = 50 // 减小淡出边缘
 
         if (yPos < margin) {
           opacity = yPos / margin
@@ -50,13 +51,14 @@ const MatrixRain: React.FC = () => {
           opacity = (canvas.height - yPos) / margin
         }
 
-        // 随机波动透明度增加“闪烁”感
-        opacity *= Math.random() * 0.4 + 0.6
+        // 基础亮度
+        const baseOpacity = Math.random() * 0.5 + 0.5
 
-        ctx.fillStyle = `rgba(255, 140, 0, ${Math.max(0, opacity)})`
+        ctx.fillStyle = `rgba(255, 140, 0, ${opacity * baseOpacity})`
         ctx.fillText(text, i * fontSize, yPos)
 
-        if (yPos > canvas.height && Math.random() > 0.975) {
+        // 增加重置概率，让粒子分布更均匀
+        if (yPos > canvas.height && Math.random() > 0.95) {
           drops[i] = 0
         }
 

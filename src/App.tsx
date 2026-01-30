@@ -2,6 +2,7 @@ import MatrixRain from './components/MatrixRain/MatrixRain'
 import GlitchText from './components/GlitchText/GlitchText'
 import Timeline from './components/Timeline/Timeline'
 import SocialLinks from './components/SocialLinks/SocialLinks'
+import Projects from './components/Projects/Projects'
 import './App.scss'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <SocialLinks />
         </section>
 
+        <Projects />
         <Timeline />
 
         <footer className="app-footer">

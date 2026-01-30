@@ -6,10 +6,14 @@
 }
 
 html, body {
-  background: black;
+  background: transparent; /* 确保 body 不会遮挡底层的 fixed 背景 */
   width: 100%;
   height: 100%;
   color: white;
+}
+
+html {
+  background: #000000; /* 真正的底层背景色 */
 }
 
 #root {
