@@ -1,73 +1,65 @@
-# React + TypeScript + Vite
+# 🦊 DanoDay - Cyber Digital Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
 
-Currently, two official plugins are available:
+![Style](https://img.shields.io/badge/Style-Cyberpunk-orange)
+![Tech](https://img.shields.io/badge/Tech-React%20%2B%20TS-blue)
+![Vite](https://img.shields.io/badge/Build-Vite-646CFF)
+![Sass](https://img.shields.io/badge/Style-Sass-CF649A)
+![Animation](https://img.shields.io/badge/Motion-Framer%20Motion-FF00C1)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**沉浸式赛博朋克风格个人主页 - 从黑暗顶部自然过渡到黑客帝国代码雨。**
 
-## React Compiler
+[预览主页 (GitHub Pages)](https://DanoAndHolidays.github.io/danoday/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+</div>
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🌌 核心视觉特性
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Orange Matrix Rain**: 全屏黑橘色 Canvas 代码雨，支持顶部向下自然过渡渐变，彻底解决层级分化感。
+- **Glitch Typography**: 采用错位切片算法实现的故障艺术标题 "DanoDay"。
+- **Dynamic Experience Timeline**: 平滑滚动的通电感时间轴，记录职业成长。
+- **Knowledge Sync**: 实时抓取 [`ObsidianSave`](https://github.com/DanoAndHolidays/ObsidianSave) 仓库中的最新笔记文章。
+- **Neon Social UI**: 具有霓虹呼吸灯效果的交互式社交导航。
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 🛠️ 技术架构 (参考 yike 工程化)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **框架**: React 18 (Hooks) + TypeScript
+- **构建**: Vite 6
+- **样式**: Sass (SCSS) + CSS Modules + Mixins
+- **动画**: Framer Motion
+- **图标**: Lucide React
+- **部署**: GitHub Actions CI/CD (全自动部署至 GitHub Pages)
+
+### 🚀 快速开始
+
+```bash
+# 克隆仓库
+git clone https://github.com/DanoAndHolidays/danoday.git
+
+# 进入目录
+cd danoday
+
+# 安装依赖
+npm install
+
+# 启动开发环境
+npm run dev
+
+# 构建生产版本
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 📬 联系我
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Email**: [Danoday@Foxmail.com](mailto:Danoday@Foxmail.com)
+- **B站**: [DanoDay 主页](https://space.bilibili.com/111616585)
+- **GitHub**: [@DanoAndHolidays](https://github.com/DanoAndHolidays)
+
+<div align="center">
+  <i>"Crafting high-performance, immersive digital experiences where code meets art."</i>
+</div>
