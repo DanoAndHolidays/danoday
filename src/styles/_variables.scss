@@ -1,0 +1,12 @@
+$theme-orange: #ff8c00;
+$theme-black: #000000;
+$theme-dark-gray: #0a0a0a;
+$glow-color: rgba(255, 140, 0, 0.6);
+
+@mixin text-glow {
+  text-shadow: 0 0 5px $theme-orange, 0 0 10px $glow-color;
+}
+
+@mixin box-glow {
+  box-shadow: 0 0 10px $glow-color, 0 0 20px rgba(255, 140, 0, 0.2);
+}
