@@ -95,7 +95,9 @@ const App: React.FC = () => {
         </section>
       </main>
 
-      <footer>
+      <footer style={{
+        border: '1px solid red',
+      }}>
         <SocialLinks />
       </footer>
 
