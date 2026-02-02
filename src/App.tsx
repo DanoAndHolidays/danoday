@@ -63,8 +63,8 @@ const App: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <GlitchText text="PROJECT_OVERDRIVE" />
-          <p className="subtitle">CORE_STATION // FULL_STACK_ENGINEER</p>
+          <GlitchText text="DANO_DAY" />
+          <p className="subtitle">CORE_STATION // FE工程师</p>
         </motion.div>
       </header>
 
