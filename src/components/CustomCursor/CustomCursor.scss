@@ -15,7 +15,7 @@
     left: 50%;
     width: 4px;
     height: 4px;
-    background: #00ffcc;
+    background: #ff8c00;
     border-radius: 50%;
     transform: translate(-50%, -50%);
   }
@@ -26,7 +26,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border: 1px solid rgba(0, 255, 204, 0.5);
+    border: 1px solid rgba(255, 140, 0, 0.5);
     border-radius: 50%;
     transition: all 0.2s ease-out;
   }
@@ -42,7 +42,7 @@
 
     .h, .v {
       position: absolute;
-      background: #00ffcc;
+      background: #ff8c00;
     }
 
     .h {
@@ -63,8 +63,8 @@
   &.hovered {
     .cursor-ring {
       transform: scale(1.5);
-      background: rgba(0, 255, 204, 0.1);
-      border-color: #00ffcc;
+      background: rgba(255, 140, 0, 0.1);
+      border-color: #ff8c00;
     }
     .cursor-crosshair {
       opacity: 1;

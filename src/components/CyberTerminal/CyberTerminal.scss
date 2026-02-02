@@ -5,12 +5,12 @@
   width: 400px;
   height: 300px;
   background: rgba(2, 6, 23, 0.9);
-  border: 1px solid #00ffcc;
+  border: 1px solid #ff8c00;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+  box-shadow: 0 0 20px rgba(255, 140, 0, 0.2);
   z-index: 100;
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -22,7 +22,7 @@
   }
 
   .terminal-header {
-    background: #00ffcc;
+    background: #ff8c00;
     color: #020617;
     padding: 0.5rem 1rem;
     display: flex;
@@ -51,15 +51,15 @@
     padding: 1rem;
     overflow-y: auto;
     font-size: 0.85rem;
-    color: #00ffcc;
+    color: #ff8c00;
     scrollbar-width: thin;
-    scrollbar-color: #00ffcc transparent;
+    scrollbar-color: #ff8c00 transparent;
 
     &::-webkit-scrollbar {
       width: 4px;
     }
     &::-webkit-scrollbar-thumb {
-      background: #00ffcc;
+      background: #ff8c00;
     }
 
     .output-line {
@@ -72,7 +72,7 @@
         color: #fff;
         &::before {
           content: "> ";
-          color: #00ffcc;
+          color: #ff8c00;
         }
       }
 
@@ -85,13 +85,13 @@
 
   .terminal-input-wrapper {
     padding: 0.5rem 1rem;
-    border-top: 1px solid rgba(0, 255, 204, 0.3);
+    border-top: 1px solid rgba(255, 140, 0, 0.3);
     display: flex;
     align-items: center;
     gap: 0.5rem;
 
     span {
-      color: #00ffcc;
+      color: #ff8c00;
     }
 
     input {

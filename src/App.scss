@@ -10,10 +10,10 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: #00ffcc;
+    background: #ff8c00;
     transform-origin: 0%;
     z-index: 1000;
-    box-shadow: 0 0 10px #00ffcc;
+    box-shadow: 0 0 10px #ff8c00;
   }
 
   .hero-section {
@@ -27,12 +27,12 @@
 
     .subtitle {
       font-family: 'JetBrains Mono', monospace;
-      color: #00ffcc;
+      color: #ff8c00;
       letter-spacing: 4px;
       margin-top: 1rem;
       font-size: 1.2rem;
       opacity: 0.8;
-      text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+      text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
     }
   }
 
@@ -48,7 +48,7 @@
 
   footer {
     padding: 4rem 2rem;
-    border-top: 1px solid rgba(0, 255, 204, 0.1);
+    border-top: 1px solid rgba(255, 140, 0, 0.1);
     display: flex;
     justify-content: center;
   }
@@ -56,8 +56,8 @@
 
 // 全局发光文字效果
 .neon-text {
-  color: #00ffcc;
-  text-shadow: 0 0 5px rgba(0, 255, 204, 0.8), 0 0 10px rgba(0, 255, 204, 0.5);
+  color: #ff8c00;
+  text-shadow: 0 0 5px rgba(255, 140, 0, 0.8), 0 0 10px rgba(255, 140, 0, 0.5);
 }
 
 // 统一隐藏原生鼠标

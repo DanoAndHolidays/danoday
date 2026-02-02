@@ -41,7 +41,7 @@ function ParticleField({ count = 2000 }) {
     <Points ref={pointsRef} positions={particles} stride={3} frustumCulled={false}>
       <PointMaterial
         transparent
-        color="#00ffcc"
+        color="#ff8c00"
         size={0.02}
         sizeAttenuation={true}
         depthWrite={false}
@@ -67,11 +67,11 @@ function FloatingGeometry() {
     <mesh ref={meshRef}>
       <octahedronGeometry args={[1, 0]} />
       <meshStandardMaterial
-        color="#00ffcc"
+        color="#ff8c00"
         wireframe
         transparent
         opacity={0.3}
-        emissive="#00ffcc"
+        emissive="#ff8c00"
         emissiveIntensity={0.5}
       />
     </mesh>
@@ -94,7 +94,7 @@ const HeroScene: React.FC = () => {
     >
       <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
         <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} color="#00ffcc" />
+        <pointLight position={[10, 10, 10]} intensity={1} color="#ff8c00" />
         <ParticleField />
         <FloatingGeometry />
         <PostProcessing />
