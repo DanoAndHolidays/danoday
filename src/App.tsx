@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import HeroScene from './components/HeroScene/HeroScene'
 import MatrixRain from './components/MatrixRain/MatrixRain'
 import Articles from './components/Articles/Articles'
@@ -12,6 +12,15 @@ import './App.scss'
 
 const App: React.FC = () => {
   const { scrollYProgress } = useScroll()
+  const [isNearTop, setIsNearTop] = useState(true)
+
+  // 监听滚动位置，用于彻底卸载不必要的组件
+  useEffect(() => {
+    return scrollYProgress.on('change', (latest) => {
+      setIsNearTop(latest < 0.25)
+    })
+  }, [scrollYProgress])
+
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -25,12 +34,23 @@ const App: React.FC = () => {
 
   return (
     <div className="app-container">
-      <motion.div style={{ opacity: matrixOpacity }}>
+      {/* 采用休眠模式：通过 prop 传递可见性，让组件内部决定是否停止渲染循环 */}
+      <motion.div
+        style={{
+          opacity: matrixOpacity,
+          pointerEvents: isNearTop ? 'none' : 'auto',
+        }}
+      >
         <MatrixRain />
       </motion.div>
 
-      <motion.div style={{ opacity: heroOpacity }}>
-        <HeroScene />
+      <motion.div
+        style={{
+          opacity: heroOpacity,
+          pointerEvents: isNearTop ? 'auto' : 'none',
+        }}
+      >
+        <HeroScene isVisible={isNearTop} />
       </motion.div>
 
       <motion.div className="progress-bar" style={{ scaleX }} />

@@ -4,7 +4,7 @@ import { Points, PointMaterial } from '@react-three/drei'
 import * as THREE from 'three'
 import PostProcessing from '../Effects/PostProcessing'
 
-function ParticleField({ count = 2000 }) {
+function ParticleField({ count = 2000, isVisible = true }) {
   const pointsRef = useRef<THREE.Points>(null)
 
   const particles = useMemo(() => {
@@ -18,6 +18,7 @@ function ParticleField({ count = 2000 }) {
   }, [count])
 
   useFrame((state) => {
+    if (!isVisible) return
     if (pointsRef.current) {
       pointsRef.current.rotation.y += 0.001
       pointsRef.current.rotation.x += 0.0005
@@ -51,10 +52,11 @@ function ParticleField({ count = 2000 }) {
   )
 }
 
-function FloatingGeometry() {
+function FloatingGeometry({ isVisible = true }) {
   const meshRef = useRef<THREE.Mesh>(null)
 
   useFrame((state) => {
+    if (!isVisible) return
     if (meshRef.current) {
       const time = state.clock.getElapsedTime()
       meshRef.current.rotation.x = Math.sin(time / 4)
@@ -78,7 +80,7 @@ function FloatingGeometry() {
   )
 }
 
-const HeroScene: React.FC = () => {
+const HeroScene: React.FC<{ isVisible?: boolean }> = ({ isVisible = true }) => {
   return (
     <div
       style={{
@@ -95,9 +97,9 @@ const HeroScene: React.FC = () => {
       <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
         <ambientLight intensity={0.2} />
         <pointLight position={[10, 10, 10]} intensity={1} color="#ff8c00" />
-        <ParticleField />
-        <FloatingGeometry />
-        <PostProcessing />
+        <ParticleField isVisible={isVisible} />
+        <FloatingGeometry isVisible={isVisible} />
+        {isVisible && <PostProcessing />}
       </Canvas>
     </div>
   )
