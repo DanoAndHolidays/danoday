@@ -40,9 +40,12 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 4rem 2rem;
+    position: relative;
+    z-index: 10;
     
     section {
-      margin-bottom: 8rem;
+      margin-bottom: 12rem; // 增加间距以提高板块区分度
+      scroll-margin-top: 100px; // 为平滑滚动留出空间
     }
   }
 

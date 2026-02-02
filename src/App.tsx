@@ -4,6 +4,8 @@ import MatrixRain from './components/MatrixRain/MatrixRain'
 import Articles from './components/Articles/Articles'
 import Timeline from './components/Timeline/Timeline'
 import Projects from './components/Projects/Projects'
+import Skills from './components/Skills/Skills'
+import Stats from './components/Stats/Stats'
 import SocialLinks from './components/SocialLinks/SocialLinks'
 import CyberTerminal from './components/CyberTerminal/CyberTerminal'
 import GlitchText from './components/GlitchText/GlitchText'
@@ -71,8 +73,16 @@ const App: React.FC = () => {
           <Projects />
         </section>
 
+        <section id="skills">
+          <Skills />
+        </section>
+
         <section id="articles">
           <Articles />
+        </section>
+
+        <section id="stats">
+          <Stats />
         </section>
 
         <section id="timeline">
