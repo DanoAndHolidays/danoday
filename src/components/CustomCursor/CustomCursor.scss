@@ -1,0 +1,79 @@
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  margin: -16px 0 0 -16px;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+
+  .cursor-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: #00ffcc;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .cursor-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(0, 255, 204, 0.5);
+    border-radius: 50%;
+    transition: all 0.2s ease-out;
+  }
+
+  .cursor-crosshair {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.2s;
+
+    .h, .v {
+      position: absolute;
+      background: #00ffcc;
+    }
+
+    .h {
+      top: 50%;
+      left: -10px;
+      right: -10px;
+      height: 1px;
+    }
+
+    .v {
+      left: 50%;
+      top: -10px;
+      bottom: -10px;
+      width: 1px;
+    }
+  }
+
+  &.hovered {
+    .cursor-ring {
+      transform: scale(1.5);
+      background: rgba(0, 255, 204, 0.1);
+      border-color: #00ffcc;
+    }
+    .cursor-crosshair {
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-cursor {
+    display: none;
+  }
+}
