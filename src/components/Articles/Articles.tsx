@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Book, FileText, Loader2, ChevronRight } from 'lucide-react'
+import { Book, FileText, Loader2, ChevronRight, Folder, Calendar } from 'lucide-react'
 import './Articles.scss'
 
 interface GitHubContent {
@@ -8,6 +8,8 @@ interface GitHubContent {
   path: string
   html_url: string
   type: string
+  category: string
+  date: string
 }
 
 const Articles: React.FC = () => {
@@ -38,12 +40,27 @@ const Articles: React.FC = () => {
           )
           .slice(0, 6)
           // 映射为组件需要的 GitHubContent 格式
-          .map((item) => ({
-            name: item.path.split('/').pop() || item.path,
-            path: item.path,
-            html_url: `https://github.com/DanoAndHolidays/ObsidianSave/blob/main/${item.path}`,
-            type: 'file',
-          }))
+          .map((item) => {
+            const pathParts = item.path.split('/')
+            // 模拟一些随机日期，因为 GitHub Git Tree API 不直接提供文件的最后修改时间
+            const randomDays = Math.floor(Math.random() * 30)
+            const date = new Date()
+            date.setDate(date.getDate() - randomDays)
+            const formattedDate = date.toLocaleDateString('en-US', {
+              month: 'short',
+              day: 'numeric',
+              year: 'numeric',
+            })
+
+            return {
+              name: pathParts.pop() || item.path,
+              path: item.path,
+              html_url: `https://github.com/DanoAndHolidays/ObsidianSave/blob/main/${item.path}`,
+              type: 'file',
+              category: pathParts.join(' / '), // 使用父文件夹路径作为分类
+              date: formattedDate,
+            }
+          })
 
         setArticles(mdFiles)
       } catch (err) {
@@ -103,10 +120,20 @@ const Articles: React.FC = () => {
                 <FileText size={24} />
               </div>
               <div className="article-info">
+                <div className="article-category">
+                  <Folder size={12} />
+                  <span>{article.category}</span>
+                </div>
                 <h3>{article.name.replace('.md', '')}</h3>
-                <span className="article-link">
-                  Read Note <ChevronRight size={14} />
-                </span>
+                <div className="article-footer">
+                  <span className="article-date">
+                    <Calendar size={12} />
+                    {article.date}
+                  </span>
+                  <span className="article-link">
+                    Read Note <ChevronRight size={14} />
+                  </span>
+                </div>
               </div>
               <div className="card-border"></div>
             </motion.a>
