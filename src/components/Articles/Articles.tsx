@@ -18,21 +18,32 @@ const Articles: React.FC = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        // 抓取 GitHub 仓库根目录内容
+        // 递归获取所有文件以查找文件夹中的内容
         const response = await fetch(
-          'https://api.github.com/repos/DanoAndHolidays/ObsidianSave/contents/',
+          'https://api.github.com/repos/DanoAndHolidays/ObsidianSave/git/trees/main?recursive=1',
         )
         if (!response.ok) throw new Error('Failed to fetch')
 
-        const data: GitHubContent[] = await response.json()
+        const result = await response.json()
+        const tree: any[] = result.tree || []
 
-        // 过滤出 .md 文件，且排除隐藏文件
-        const mdFiles = data
+        // 过滤出文件夹中的 .md 文件（排除根目录）
+        const mdFiles = tree
           .filter(
             (item) =>
-              item.type === 'file' && item.name.endsWith('.md') && !item.name.startsWith('.'),
+              item.type === 'blob' && // git tree API 中 'blob' 代表文件
+              item.path.includes('/') && // 必须在文件夹中（包含 '/'）
+              item.path.endsWith('.md') &&
+              !item.path.split('/').pop()?.startsWith('.'), // 排除隐藏文件
           )
-          .slice(0, 6) // 最多展示 6 篇
+          .slice(0, 6)
+          // 映射为组件需要的 GitHubContent 格式
+          .map((item) => ({
+            name: item.path.split('/').pop() || item.path,
+            path: item.path,
+            html_url: `https://github.com/DanoAndHolidays/ObsidianSave/blob/main/${item.path}`,
+            type: 'file',
+          }))
 
         setArticles(mdFiles)
       } catch (err) {
@@ -44,6 +55,8 @@ const Articles: React.FC = () => {
     }
 
     fetchArticles()
+
+    // 依赖为[]，这里只会在组件挂载时运行一次
   }, [])
 
   if (loading) {
