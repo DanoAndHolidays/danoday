@@ -7,7 +7,8 @@ const CustomCursor: React.FC = () => {
   const cursorX = useMotionValue(-100)
   const cursorY = useMotionValue(-100)
 
-  const springConfig = { damping: 25, stiffness: 150 }
+  // 提高 stiffness 并降低 damping 让鼠标更跟手
+  const springConfig = { damping: 20, stiffness: 300 }
   const cursorXSpring = useSpring(cursorX, springConfig)
   const cursorYSpring = useSpring(cursorY, springConfig)
 

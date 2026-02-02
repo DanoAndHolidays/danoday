@@ -89,11 +89,11 @@ const HeroScene: React.FC = () => {
         height: '100%',
         pointerEvents: 'none',
         zIndex: -1,
-        background: 'radial-gradient(circle at center, #0a192f 0%, #020617 100%)',
+        background: '#000000',
       }}
     >
       <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-        <ambientLight intensity={0.5} />
+        <ambientLight intensity={0.2} />
         <pointLight position={[10, 10, 10]} intensity={1} color="#ff8c00" />
         <ParticleField />
         <FloatingGeometry />

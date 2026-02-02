@@ -1,13 +1,13 @@
 import React from 'react'
 import HeroScene from './components/HeroScene/HeroScene'
+import MatrixRain from './components/MatrixRain/MatrixRain'
 import Articles from './components/Articles/Articles'
 import Timeline from './components/Timeline/Timeline'
 import Projects from './components/Projects/Projects'
 import SocialLinks from './components/SocialLinks/SocialLinks'
 import CyberTerminal from './components/CyberTerminal/CyberTerminal'
-import CustomCursor from './components/CustomCursor/CustomCursor'
 import GlitchText from './components/GlitchText/GlitchText'
-import { motion, useScroll, useSpring } from 'framer-motion'
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import './App.scss'
 
 const App: React.FC = () => {
@@ -18,10 +18,20 @@ const App: React.FC = () => {
     restDelta: 0.001,
   })
 
+  // 当滚动进度在 0-0.2 之间时，3D 背景显示，代码雨逐渐消失
+  // 当滚动进度 > 0.2 时，3D 背景消失，代码雨完全显示
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0])
+  const matrixOpacity = useTransform(scrollYProgress, [0, 0.4], [0, 1])
+
   return (
     <div className="app-container">
-      <CustomCursor />
-      <HeroScene />
+      <motion.div style={{ opacity: matrixOpacity }}>
+        <MatrixRain />
+      </motion.div>
+
+      <motion.div style={{ opacity: heroOpacity }}>
+        <HeroScene />
+      </motion.div>
 
       <motion.div className="progress-bar" style={{ scaleX }} />
 

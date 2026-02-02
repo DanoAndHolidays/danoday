@@ -59,11 +59,3 @@
   color: #ff8c00;
   text-shadow: 0 0 5px rgba(255, 140, 0, 0.8), 0 0 10px rgba(255, 140, 0, 0.5);
 }
-
-// 统一隐藏原生鼠标
-html, body {
-  cursor: none !important;
-  * {
-    cursor: none !important;
-  }
-}
