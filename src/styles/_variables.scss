@@ -1,12 +1,14 @@
 $theme-orange: #ff8c00;
 $theme-black: #000000;
 $theme-dark-gray: #0a0a0a;
-$glow-color: rgba(255, 140, 0, 0.6);
+$glow-color: rgba(255, 140, 0, 0.3); // 减弱发光颜色透明度
 
 @mixin text-glow {
-  text-shadow: 0 0 5px $theme-orange, 0 0 10px $glow-color;
+  text-shadow: 0 0 4px rgba($theme-orange, 0.4); // 减弱文字发光
 }
 
 @mixin box-glow {
-  box-shadow: 0 0 10px $glow-color, 0 0 20px rgba(255, 140, 0, 0.2);
+  box-shadow: 0 0 8px $glow-color; // 减弱盒子发光
 }
+
+$section-title-size: 2rem; // 统一标题大小

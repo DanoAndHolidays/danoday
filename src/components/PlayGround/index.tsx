@@ -134,8 +134,8 @@ const PlayGround: React.FC = () => {
         <div className="playground-container">
             <canvas ref={canvasRef} className="grid-canvas" />
             <div className="ui-overlay">
-                <h2>Neural Grid</h2>
-                <p>Interactive Sensor Membrane v1.0</p>
+                <h2>交互实验</h2>
+                <p>可视化网格交互演示 v1.0</p>
             </div>
         </div>
     )

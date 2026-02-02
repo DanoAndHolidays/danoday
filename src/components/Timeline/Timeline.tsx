@@ -11,31 +11,31 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    year: '2025 - Present',
-    title: 'Senior Frontend Architect',
-    company: 'Future Tech',
+    year: '2025 - 至今',
+    title: '高级前端架构师',
+    company: '未来科技',
     description:
-      'Leading the development of next-gen cyber interfaces and immersive web experiences.',
+      '主导下一代赛博界面和沉浸式 Web 体验的开发。',
   },
   {
     year: '2023 - 2025',
-    title: 'Frontend Engineer',
-    company: 'Neo Systems',
+    title: '前端工程师',
+    company: 'Neo 系统',
     description:
-      'Developed scalable React applications with focus on performance and motion design.',
+      '开发高性能、注重动画设计的可扩展 React 应用程序。',
   },
   {
     year: '2021 - 2023',
-    title: 'UI/UX Designer',
-    company: 'Creative Labs',
-    description: 'Focused on creating high-fidelity prototypes and dark-themed interface systems.',
+    title: 'UI/UX 设计师',
+    company: '创意实验室',
+    description: '专注于创建高保真原型和深色主题界面系统。',
   },
 ]
 
 const Timeline: React.FC = () => {
   return (
     <div className="timeline-container">
-      <h2 className="timeline-title">Experience</h2>
+      <h2 className="timeline-title">项目经历</h2>
       <div className="timeline">
         {experiences.map((exp, index) => (
           <motion.div

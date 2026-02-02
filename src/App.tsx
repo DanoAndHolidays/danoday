@@ -65,7 +65,7 @@ const App: React.FC = () => {
           transition={{ duration: 1 }}
         >
           <GlitchText text="DANO_DAY" />
-          <p className="subtitle">CORE_STATION // FE工程师</p>
+          <p className="subtitle">前端开发工程师</p>
         </motion.div>
       </header>
 

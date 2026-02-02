@@ -11,7 +11,7 @@ const CyberTerminal: React.FC = () => {
   const [isCollapsed, setIsCollapsed] = useState(true)
   const [input, setInput] = useState('')
   const [history, setHistory] = useState<HistoryItem[]>([
-    { type: 'system', text: 'SYSTEM READY. TYPE "help" FOR COMMANDS.' },
+    { type: 'system', text: '系统就绪。输入 "help" 查看命令。' },
   ])
   const contentRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -33,7 +33,7 @@ const CyberTerminal: React.FC = () => {
       case 'help':
         newHistory.push({
           type: 'output',
-          text: 'AVAILABLE COMMANDS: \n- help: SHOW THIS MESSAGE\n- clear: CLEAR TERMINAL\n- whoami: DISPLAY IDENTITY\n- status: SYSTEM CHECK\n- matrix: OVERRIDE SYSTEM',
+          text: '可用命令: \n- help: 显示此帮助信息\n- clear: 清空终端\n- whoami: 显示身份信息\n- status: 系统状态检查\n- matrix: 覆盖系统',
         })
         break
       case 'clear':
@@ -43,23 +43,23 @@ const CyberTerminal: React.FC = () => {
       case 'whoami':
         newHistory.push({
           type: 'output',
-          text: 'USER: GUEST_RECRUITER\nACCESS_LEVEL: 1\nSTATUS: MONITORING...',
+          text: '用户: 访客_招聘人员\n权限等级: 1\n状态: 监控中...',
         })
         break
       case 'status':
         newHistory.push({
           type: 'output',
-          text: 'CORE: OPTIMAL\nNETWORK: ENCRYPTED\nSECURITY: ACTIVE',
+          text: '核心: 最佳\n网络: 已加密\n安全: 运行中',
         })
         break
       case 'matrix':
         newHistory.push({
           type: 'output',
-          text: 'INITIATING SYSTEM OVERRIDE... \n[####################] 100%\nACCESS GRANTED.',
+          text: '正在初始化系统覆盖... \n[####################] 100%\n访问已授权。',
         })
         break
       default:
-        newHistory.push({ type: 'system', text: `COMMAND NOT FOUND: ${cmd}` })
+        newHistory.push({ type: 'system', text: `未找到命令: ${cmd}` })
     }
 
     setHistory(newHistory)
@@ -71,7 +71,7 @@ const CyberTerminal: React.FC = () => {
       <div className="terminal-header" onClick={() => setIsCollapsed(!isCollapsed)}>
         <div className="title">
           <TerminalIcon size={14} style={{ marginRight: '8px' }} />
-          SYSTEM_CONSOLE_V1.0.4
+          系统控制台_V1.0.4
         </div>
         <div className="controls">
           {isCollapsed ? <ChevronUp size={14} /> : <ChevronDown size={14} />}

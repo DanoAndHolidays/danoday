@@ -32,7 +32,7 @@ const projects: Project[] = [
 const Projects: React.FC = () => {
   return (
     <div className="projects-container">
-      <h2 className="projects-title">Featured Projects</h2>
+      <h2 className="projects-title">精选项目</h2>
       <div className="projects-grid">
         {projects.map((project, index) => (
           <motion.div
@@ -61,7 +61,7 @@ const Projects: React.FC = () => {
                   className="link-icon"
                 >
                   <Github size={20} />
-                  <span>Code</span>
+                  <span>代码</span>
                 </a>
                 {project.demo && (
                   <a
@@ -71,7 +71,7 @@ const Projects: React.FC = () => {
                     className="link-icon"
                   >
                     <ExternalLink size={20} />
-                    <span>Live Demo</span>
+                    <span>在线演示</span>
                   </a>
                 )}
               </div>

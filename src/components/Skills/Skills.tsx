@@ -16,7 +16,7 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
-    title: 'Frameworks & Core',
+    title: '框架与核心',
     icon: <Code2 size={24} />,
     items: [
       { name: 'Vue 3', level: 95 },
@@ -26,7 +26,7 @@ const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: 'Engineering & UI',
+    title: '工程化与 UI',
     icon: <Cpu size={24} />,
     items: [
       { name: 'Vite', level: 90 },
@@ -36,7 +36,7 @@ const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: 'Viz & Animation',
+    title: '可视化与动画',
     icon: <Zap size={24} />,
     items: [
       { name: 'Echarts', level: 88 },
@@ -52,7 +52,7 @@ const Skills: React.FC = () => {
     <section className="skills-container">
       <div className="section-header">
         <Zap className="header-icon" />
-        <h2>SYSTEM_CAPABILITIES</h2>
+        <h2>核心技能</h2>
       </div>
 
       <div className="skills-grid">
