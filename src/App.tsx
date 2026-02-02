@@ -9,6 +9,7 @@ import Stats from './components/Stats/Stats'
 import SocialLinks from './components/SocialLinks/SocialLinks'
 import CyberTerminal from './components/CyberTerminal/CyberTerminal'
 import GlitchText from './components/GlitchText/GlitchText'
+import PlayGround from './components/PlayGround'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import './App.scss'
 
@@ -31,8 +32,8 @@ const App: React.FC = () => {
 
   // 当滚动进度在 0-0.2 之间时，3D 背景显示，代码雨逐渐消失
   // 当滚动进度 > 0.2 时，3D 背景消失，代码雨完全显示
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0])
-  const matrixOpacity = useTransform(scrollYProgress, [0, 0.4], [0, 1])
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0])
+  const matrixOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 0.5])
 
   return (
     <div className="app-container">
@@ -87,6 +88,10 @@ const App: React.FC = () => {
 
         <section id="timeline">
           <Timeline />
+        </section>
+
+        <section id="playground">
+          <PlayGround />
         </section>
       </main>
 
