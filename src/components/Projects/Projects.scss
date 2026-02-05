@@ -1,112 +1,71 @@
-@use '../../styles/variables' as *;
+@use "../../styles/variables" as *;
 
 .projects-container {
-  max-width: 1000px;
-  margin: 100px auto;
-  padding: 0 20px;
-  position: relative;
-  z-index: 1;
-}
+  width: 100%;
 
-.projects-title {
-  color: $theme-orange;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  margin-bottom: 50px;
-  text-align: center;
-  @include text-glow;
-}
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.project-card {
-  position: relative;
-  background: rgba($theme-dark-gray, 0.7);
-  border: 1px solid rgba($theme-orange, 0.2);
-  border-radius: 12px;
-  padding: 30px;
-  backdrop-filter: blur(10px);
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-  &:hover {
-    transform: translateY(-10px);
-    border-color: $theme-orange;
-    @include box-glow;
-
-    .card-glow {
-      opacity: 0.6;
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
     }
   }
 
-  .project-content {
+  .project-card {
+    @include card-style;
+    padding: 1.5rem;
     position: relative;
-    z-index: 2;
+    overflow: hidden;
 
     h3 {
-      color: white;
-      font-size: 1.5rem;
-      margin-bottom: 15px;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
     }
 
     p {
-      color: rgba(white, 0.7);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-  }
-
-  .tech-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 25px;
-
-    .tech-tag {
-      background: rgba($theme-orange, 0.1);
-      color: $theme-orange;
-      padding: 4px 10px;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      border: 1px solid rgba($theme-orange, 0.3);
-    }
-  }
-
-  .project-links {
-    display: flex;
-    gap: 20px;
-
-    .link-icon {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      color: white;
-      text-decoration: none;
+      color: $text-secondary;
+      line-height: 1.5;
+      margin-bottom: 1rem;
       font-size: 0.9rem;
-      opacity: 0.6;
-      transition: all 0.3s ease;
+    }
 
-      &:hover {
-        opacity: 1;
-        color: $theme-orange;
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+
+      .tech-tag {
+        background: $bg-gray;
+        color: $text-secondary;
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        font-size: 0.875rem;
+        border: 1px solid $border-color;
       }
     }
-  }
 
-  .card-glow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at top right, rgba($theme-orange, 0.3), transparent 70%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    pointer-events: none;
+    .project-links {
+      display: flex;
+      gap: 1.5rem;
+
+      .link-icon {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: $text-primary;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: color 0.2s;
+
+        &:hover {
+          color: $accent-blue;
+        }
+      }
+    }
   }
 }

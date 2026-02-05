@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Book, FileText, Loader2, ChevronRight, Folder, Calendar } from 'lucide-react'
@@ -46,10 +48,10 @@ const Articles: React.FC = () => {
             const randomDays = Math.floor(Math.random() * 30)
             const date = new Date()
             date.setDate(date.getDate() - randomDays)
-            const formattedDate = date.toLocaleDateString('en-US', {
+            const formattedDate = date.toLocaleDateString('zh-CN', {
+              year: 'numeric',
               month: 'short',
               day: 'numeric',
-              year: 'numeric',
             })
 
             return {
@@ -80,26 +82,20 @@ const Articles: React.FC = () => {
     return (
       <div className="articles-loading">
         <Loader2 className="spinner" size={40} />
-        <p>Synchronizing with Obsidian Vault...</p>
+        <p>正在同步 Obsidian 笔记库...</p>
       </div>
     )
   }
 
   return (
     <section className="articles-container">
-      <div className="section-header">
-        <Book className="header-icon" />
-        <h2>Latest Notes</h2>
-      </div>
-
       {error ? (
         <div className="articles-error">
           <p>
-            Failed to load notes. Please check the{' '}
+            加载笔记失败。请直接查看{' '}
             <a href="https://github.com/DanoAndHolidays/ObsidianSave" target="_blank">
-              repository
-            </a>{' '}
-            directly.
+              代码仓库
+            </a>。
           </p>
         </div>
       ) : (
@@ -131,7 +127,7 @@ const Articles: React.FC = () => {
                     {article.date}
                   </span>
                   <span className="article-link">
-                    Read Note <ChevronRight size={14} />
+                    阅读笔记 <ChevronRight size={14} />
                   </span>
                 </div>
               </div>
@@ -147,7 +143,7 @@ const Articles: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          View All Knowledge Base
+          查看完整知识库
         </a>
       </div>
     </section>

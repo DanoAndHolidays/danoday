@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Activity, Github, Coffee, Bug, Timer, Users, GitBranch } from 'lucide-react'
@@ -53,24 +55,19 @@ const Stats: React.FC = () => {
   }, [])
 
   const systemMetrics = [
-    { label: 'COFFEE_CONSUMED', value: '1,240 L', icon: <Coffee size={20} /> },
-    { label: 'BUGS_TERMINATED', value: '4,892', icon: <Bug size={20} /> },
-    { label: 'SYSTEM_UPTIME', value: uptime, icon: <Timer size={20} /> },
+    { label: '咖啡消耗量', value: '1,240 L', icon: <Coffee size={20} /> },
+    { label: '已修复缺陷', value: '4,892', icon: <Bug size={20} /> },
+    { label: '系统运行时间', value: uptime, icon: <Timer size={20} /> },
   ]
 
   const githubMetrics = [
-    { label: 'REPOSITORIES', value: githubData.repos, icon: <GitBranch size={20} /> },
-    { label: 'FOLLOWERS', value: githubData.followers, icon: <Users size={20} /> },
-    { label: 'PUBLIC_GISTS', value: githubData.gists, icon: <Github size={20} /> },
+    { label: '代码仓库', value: githubData.repos, icon: <GitBranch size={20} /> },
+    { label: '关注者', value: githubData.followers, icon: <Users size={20} /> },
+    { label: '公开 Gists', value: githubData.gists, icon: <Github size={20} /> },
   ]
 
   return (
     <section className="stats-container">
-      <div className="section-header">
-        <Activity className="header-icon" />
-        <h2>SYSTEM_MONITOR</h2>
-      </div>
-
       <div className="stats-grid">
         <motion.div
           className="stats-panel github-panel"
@@ -79,7 +76,7 @@ const Stats: React.FC = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="panel-title">GITHUB_LIVE_FEED</div>
+          <div className="panel-title">GitHub 实时数据</div>
           <div className="metrics-list">
             {githubMetrics.map((m, i) => (
               <div key={i} className="metric-item">
@@ -100,7 +97,7 @@ const Stats: React.FC = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="panel-title">CORE_SYSTEM_METRICS</div>
+          <div className="panel-title">累计统计</div>
           <div className="metrics-list">
             {systemMetrics.map((m, i) => (
               <div key={i} className="metric-item">
@@ -119,9 +116,9 @@ const Stats: React.FC = () => {
       <div className="status-footer">
         <div className="status-indicator">
           <span className="dot pulse"></span>
-          <span className="text">ALL SYSTEMS OPERATIONAL</span>
+          <span className="text">所有系统运行正常</span>
         </div>
-        <div className="timestamp">DATA_REFRESH: {new Date().toLocaleTimeString()}</div>
+        <div className="timestamp">数据刷新时间: {new Date().toLocaleTimeString()}</div>
       </div>
     </section>
   )
