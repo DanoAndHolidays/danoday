@@ -16,6 +16,12 @@ const experiences: Experience[] = [
     year: '2025.10 - 至今',
     title: '前端开发实习生',
     company: '字节跳动 (Bytedance)',
+    description: '负责字节云基础通用业务组件的开发。',
+  },
+  {
+    year: '2024 - 至今',
+    title: '开源贡献者',
+    company: 'Vite DevTools (开源社区)',
     description: '参与 Vite DevTools 维护与开发，负责测试构建产物，发现并修复 Bug。',
   },
   {
