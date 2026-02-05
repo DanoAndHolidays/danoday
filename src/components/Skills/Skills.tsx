@@ -21,20 +21,20 @@ const skillCategories: SkillCategory[] = [
     title: '框架与核心',
     icon: <Code2 size={24} />,
     items: [
-      { name: 'Vue 3 / Vue Router', level: 95 },
+      { name: 'Vue 3 / Next.js 15', level: 95 },
       { name: 'TypeScript', level: 92 },
-      { name: 'ES6+ / 浏览器渲染', level: 90 },
       { name: 'Pinia / 状态管理', level: 88 },
+      { name: 'ES6+ / 浏览器渲染', level: 90 },
     ],
   },
   {
     title: '工程化与 UI',
     icon: <Cpu size={24} />,
     items: [
-      { name: 'Vite', level: 90 },
+      { name: 'Rolldown / Vite', level: 90 },
       { name: 'TailwindCSS', level: 92 },
-      { name: 'Sass / CSS3', level: 95 },
-      { name: 'Element Plus', level: 85 },
+      { name: 'Sass / SCSS', level: 95 },
+      { name: 'Framer Motion', level: 88 },
     ],
   },
   {
@@ -42,9 +42,9 @@ const skillCategories: SkillCategory[] = [
     icon: <Zap size={24} />,
     items: [
       { name: 'Echarts', level: 88 },
-      { name: 'GSAP', level: 85 },
+      { name: 'GSAP / Motion', level: 85 },
       { name: 'HTML5 Canvas', level: 82 },
-      { name: 'Motion Logic', level: 90 },
+      { name: 'Element Plus', level: 85 },
     ],
   },
 ]
