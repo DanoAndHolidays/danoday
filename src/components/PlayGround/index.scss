@@ -1,44 +1,35 @@
+@use "../../styles/variables" as *;
+
 .playground-container {
-    position: relative;
+  @include card-style;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  background: #000; // 交互实验可以保留黑色背景作为对比
+  
+  .grid-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 500px;
-    background: #050507;
-    overflow: hidden;
-    // border: 1px solid rgba(0, 243, 255, 0.15);
-    border-radius: 12px;
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+    height: 100%;
+  }
 
-    .ui-overlay {
-        position: absolute;
-        top: 30px;
-        left: 30px;
-        pointer-events: none;
-        z-index: 10;
+  .ui-overlay {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    pointer-events: none;
+    color: #fff;
 
-        h2 {
-            color: #00f3ff;
-            margin: 0;
-            font-family: 'Courier New', monospace;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 0 4px rgba(0, 243, 255, 0.3);
-        }
-
-        p {
-            color: rgba(0, 243, 255, 0.4);
-            font-size: 0.75rem;
-            margin: 5px 0 0 0;
-            font-family: monospace;
-        }
+    h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem !important;
     }
 
-    .grid-canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: block;
+    p {
+      font-size: 0.875rem;
+      opacity: 0.6;
     }
+  }
 }

@@ -1,162 +1,93 @@
-@use '../../styles/variables' as *;
+@use "../../styles/variables" as *;
 
 .articles-container {
-  max-width: 1000px;
-  margin: 100px auto;
-  padding: 0 20px;
-  position: relative;
-  z-index: 1;
-}
-
-.section-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 50px;
-  color: $theme-orange;
-  @include text-glow;
-
-  .header-icon {
-    width: 32px;
-    height: 32px;
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
   }
 
-  h2 {
-    font-size: $section-title-size;
-    text-transform: uppercase;
-    margin: 0;
-  }
-}
-
-.articles-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-.article-card {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  background: rgba($theme-dark-gray, 0.6);
-  border: 1px solid rgba($theme-orange, 0.1);
-  padding: 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  overflow: hidden;
-  backdrop-filter: blur(5px);
-
-  &:hover {
-    border-color: $theme-orange;
-    @include box-glow;
-    transform: translateX(10px);
+  .article-card {
+    @include card-style;
+    padding: 1rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 
     .article-icon {
-      color: white;
-      background: $theme-orange;
+      color: $accent-gray;
     }
 
-    .article-link {
-      color: $theme-orange;
+    .article-info {
+      .article-category {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.75rem;
+        color: $accent-gray;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.5rem;
+      }
+
+      h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+      }
+
+      .article-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.875rem;
+        color: $text-secondary;
+
+        .article-date {
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+        }
+
+        .article-link {
+          color: $accent-blue;
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+          font-weight: 500;
+        }
+      }
     }
   }
 
-  .article-icon {
-    background: rgba($theme-orange, 0.1);
-    color: $theme-orange;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-  }
-
-  .article-info {
-    flex: 1;
-    min-width: 0;
-
-    .article-category {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      color: $theme-orange;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-      opacity: 0.8;
-    }
-
-    h3 {
-      color: white;
-      font-size: 1.1rem;
-      margin: 0 0 12px 0;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      font-weight: 600;
-    }
-
-    .article-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: auto;
-    }
-
-    .article-date {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      color: rgba(white, 0.3);
-      font-size: 0.75rem;
-    }
-
-    .article-link {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      color: rgba(white, 0.4);
-      font-size: 0.8rem;
-      transition: all 0.3s ease;
-      padding: 4px 0;
+  .view-all {
+    margin-top: 1.5rem;
+    text-align: center;
+    
+    a {
+      @include button-primary;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 500;
     }
   }
 }
 
-.articles-loading, .articles-error {
-  text-align: center;
-  padding: 50px;
-  color: rgba(white, 0.6);
+.articles-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  gap: 1rem;
+  color: $text-secondary;
 
   .spinner {
-    animation: spin 2s linear infinite;
-    color: $theme-orange;
-    margin-bottom: 15px;
-  }
-}
-
-.view-all {
-  text-align: center;
-  margin-top: 40px;
-
-  a {
-    color: $theme-orange;
-    text-decoration: none;
-    font-size: 0.9rem;
-    border-bottom: 1px solid transparent;
-    transition: all 0.3s ease;
-
-    &:hover {
-      border-bottom-color: $theme-orange;
-      @include text-glow;
-    }
+    animation: spin 1s linear infinite;
   }
 }
 

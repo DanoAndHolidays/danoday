@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react'
 import { motion } from 'framer-motion'
 import './Timeline.scss'
@@ -11,31 +13,22 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    year: '2025 - 至今',
-    title: '高级前端架构师',
-    company: '未来科技',
-    description:
-      '主导下一代赛博界面和沉浸式 Web 体验的开发。',
+    year: '2025.10 - 至今',
+    title: '前端开发实习生',
+    company: '字节跳动 (Bytedance)',
+    description: '参与 Vite DevTools 维护与开发，负责测试构建产物，发现并修复 Bug。',
   },
   {
-    year: '2023 - 2025',
-    title: '前端工程师',
-    company: 'Neo 系统',
-    description:
-      '开发高性能、注重动画设计的可扩展 React 应用程序。',
-  },
-  {
-    year: '2021 - 2023',
-    title: 'UI/UX 设计师',
-    company: '创意实验室',
-    description: '专注于创建高保真原型和深色主题界面系统。',
+    year: '2023 - 2027',
+    title: '本科 · 计算机科学与技术',
+    company: '中国矿业大学',
+    description: '双一流 211 本科。曾获 2025 年度中国青年科技创新“揭榜挂帅”擂台赛（国一）、数学建模等奖项。',
   },
 ]
 
 const Timeline: React.FC = () => {
   return (
     <div className="timeline-container">
-      <h2 className="timeline-title">项目经历</h2>
       <div className="timeline">
         {experiences.map((exp, index) => (
           <motion.div

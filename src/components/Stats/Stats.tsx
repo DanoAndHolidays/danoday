@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Activity, Github, Coffee, Bug, Timer, Users, GitBranch } from 'lucide-react'
@@ -66,11 +68,6 @@ const Stats: React.FC = () => {
 
   return (
     <section className="stats-container">
-      <div className="section-header">
-        <Activity className="header-icon" />
-        <h2>个人数据</h2>
-      </div>
-
       <div className="stats-grid">
         <motion.div
           className="stats-panel github-panel"

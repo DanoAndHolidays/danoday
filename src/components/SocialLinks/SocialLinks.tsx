@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react'
 import { Github, Mail, Tv } from 'lucide-react'
 import './SocialLinks.scss'

@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Cpu, Code2, ShieldCheck, Zap } from 'lucide-react'
@@ -19,10 +21,10 @@ const skillCategories: SkillCategory[] = [
     title: '框架与核心',
     icon: <Code2 size={24} />,
     items: [
-      { name: 'Vue 3', level: 95 },
+      { name: 'Vue 3 / Vue Router', level: 95 },
       { name: 'TypeScript', level: 92 },
-      { name: 'ES6+', level: 90 },
-      { name: 'Pinia', level: 88 },
+      { name: 'ES6+ / 浏览器渲染', level: 90 },
+      { name: 'Pinia / 状态管理', level: 88 },
     ],
   },
   {
@@ -50,11 +52,6 @@ const skillCategories: SkillCategory[] = [
 const Skills: React.FC = () => {
   return (
     <section className="skills-container">
-      <div className="section-header">
-        <Zap className="header-icon" />
-        <h2>核心技能</h2>
-      </div>
-
       <div className="skills-grid">
         {skillCategories.map((category, catIndex) => (
           <motion.div

@@ -1,14 +1,32 @@
-$theme-orange: #ff8000;
-$theme-black: #000000;
-$theme-dark-gray: #0a0a0a;
-$glow-color: rgba(255, 140, 0, 0.3); // 减弱发光颜色透明度
+$bg-white: #ffffff;
+$bg-gray: #fafafa;
+$border-color: #eaeaea;
+$text-primary: #000000;
+$text-secondary: #666666;
+$accent-blue: #0070f3;
+$accent-gray: #888888;
 
-@mixin text-glow {
-  text-shadow: 0 0 4px rgba($theme-orange, 0.4); // 减弱文字发光
+@mixin button-primary {
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #000;
+  transition: all 0.2s ease;
+  &:hover {
+    background: #fff;
+    color: #000;
+  }
 }
 
-@mixin box-glow {
-  box-shadow: 0 0 8px $glow-color; // 减弱盒子发光
+@mixin card-style {
+  background: #fff;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  transition: box-shadow 0.2s ease;
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
 }
 
-$section-title-size: 2rem; // 统一标题大小
+$section-title-size: 1.75rem;

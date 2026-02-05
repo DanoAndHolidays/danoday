@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ExternalLink, Github } from 'lucide-react'
@@ -27,12 +29,18 @@ const projects: Project[] = [
     github: 'https://github.com/DanoAndHolidays/PLAYLET-APP',
     demo: 'https://danoandholidays.github.io/PLAYLET-APP/',
   },
+  {
+    title: '深岩智测',
+    description: '基于多维信息感知的深部开采煤岩损伤演化预警平台。数据可视化大屏，将模型输出的预测结果可视化展示。使用 Vue3 开发，封装针对不同数据的展示组件。',
+    tech: ['Vue3', 'Vue Router', 'Pinia', 'Tailwindcss', 'Echart'],
+    github: 'https://github.com/DanoAndHolidays/test',
+    demo: 'https://danoandholidays.github.io/test/#/',
+  },
 ]
 
 const Projects: React.FC = () => {
   return (
     <div className="projects-container">
-      <h2 className="projects-title">精选项目</h2>
       <div className="projects-grid">
         {projects.map((project, index) => (
           <motion.div

@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Book, FileText, Loader2, ChevronRight, Folder, Calendar } from 'lucide-react'
@@ -87,11 +89,6 @@ const Articles: React.FC = () => {
 
   return (
     <section className="articles-container">
-      <div className="section-header">
-        <Book className="header-icon" />
-        <h2>最新笔记</h2>
-      </div>
-
       {error ? (
         <div className="articles-error">
           <p>

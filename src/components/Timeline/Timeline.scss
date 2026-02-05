@@ -1,98 +1,67 @@
-@use '../../styles/variables' as *;
+@use "../../styles/variables" as *;
 
 .timeline-container {
-  max-width: 800px;
-  margin: 100px auto;
-  padding: 0 20px;
-  position: relative;
-  z-index: 1;
-}
-
-.timeline-title {
-  color: $theme-orange;
-  font-size: $section-title-size;
-  text-transform: uppercase;
-  margin-bottom: 50px;
-  text-align: center;
-  @include text-glow;
-}
-
-.timeline {
-  position: relative;
-  border-left: 2px solid $theme-orange;
-  padding-left: 30px;
-  margin-left: 20px;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -2px;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(to bottom, $theme-orange, transparent);
-    box-shadow: 0 0 10px $theme-orange;
-  }
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 60px;
-
-  .timeline-dot {
-    position: absolute;
-    left: -41px;
-    top: 5px;
-    width: 20px;
-    height: 20px;
-    background: $theme-black;
-    border: 2px solid $theme-orange;
-    border-radius: 50%;
-    @include box-glow;
-    transition: transform 0.3s ease;
+  .timeline-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
   }
 
-  &:hover .timeline-dot {
-    transform: scale(1.5);
-    background: $theme-orange;
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-left: 1px solid $border-color;
+    margin-left: 0.5rem;
+    padding-left: 1.5rem;
   }
 
-  .timeline-content {
-    background: rgba($theme-dark-gray, 0.8);
-    padding: 20px;
-    border: 1px solid rgba($theme-orange, 0.2);
-    border-radius: 8px;
-    backdrop-filter: blur(5px);
-    transition: all 0.3s ease;
+  .timeline-item {
+    position: relative;
+    padding-bottom: 2rem;
 
-    &:hover {
-      border-color: $theme-orange;
-      @include box-glow;
-      transform: translateY(-5px);
+    &:last-child {
+      padding-bottom: 0;
     }
 
-    .year {
-      color: $theme-orange;
-      font-weight: bold;
-      font-size: 0.9rem;
-      display: block;
-      margin-bottom: 5px;
+    .timeline-dot {
+      position: absolute;
+      left: calc(-1.5rem - 5px);
+      top: 0.5rem;
+      width: 9px;
+      height: 9px;
+      background: $text-primary;
+      border-radius: 50%;
+      border: 2px solid $bg-white;
     }
 
-    h3 {
-      color: white;
-      margin: 5px 0;
-    }
+    .timeline-content {
+      .year {
+        font-size: 0.875rem;
+        color: $accent-gray;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
 
-    h4 {
-      color: rgba(white, 0.7);
-      margin-bottom: 10px;
-      font-style: italic;
-    }
+      h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
 
-    p {
-      color: rgba(white, 0.6);
-      line-height: 1.6;
+      h4 {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: $text-primary;
+        margin-bottom: 0.75rem;
+      }
+
+      p {
+        color: $text-secondary;
+        line-height: 1.5;
+        font-size: 0.85rem;
+      }
     }
   }
 }
