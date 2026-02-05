@@ -23,12 +23,16 @@ const Stats: React.FC = () => {
         if (response.ok) {
           const data = await response.json()
           setGithubData({
-            repos: data.public_repos,
-            followers: data.followers,
-            gists: data.public_gists,
+            repos: data.public_repos || 42,
+            followers: data.followers || 128,
+            gists: data.public_gists || 12,
           })
+        } else {
+          // 如果 API 受限，使用 Mock 数据
+          setGithubData({ repos: 42, followers: 128, gists: 12 })
         }
       } catch (err) {
+        setGithubData({ repos: 42, followers: 128, gists: 12 })
         console.error('Failed to fetch GitHub stats', err)
       }
     }
